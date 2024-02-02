@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOWER TITANS: REAL ESTATE RUMBLE TRIVIA</title>
+    <style>
+        body {
+            font-family: Futura, bold;
+            text-align: center;
+            margin: 30px;
+        }
+        #question-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TOWER TITANS: REAL ESTATE RUMBLE TRIVIA</h1>
+    <button onclick="generateRandomQuestion()">get a question here!</button>
+    <div id="question-container"></div>
+
+    <script>
+        // Define your list of questions and answers
+        const questionsAndAnswers = [
+            { question: "How does Mn & Ni stabilise the Austenite phase?", answer: "Both have a BCC structure that increases the area on the phase diagram" },
+            { question: "Question 2?", answer: "Answer 2" },
+            { question: "Question 3?", answer: "Answer 3" },
+            // Add more questions as needed
+        ];
+
+        function generateRandomQuestion() {
+            // Shuffle the array to get a random order
+            const shuffledQuestions = [...questionsAndAnswers].sort(() => Math.random() - 0.5);
+
+            // Display the first question in the shuffled array
+            const questionContainer = document.getElementById("question-container");
+            questionContainer.innerHTML = `<p><strong>Question:</strong> ${shuffledQuestions[0].question}</p>
+                                          <p><strong>Answer:</strong> ${shuffledQuestions[0].answer}</p>`;
+        }
+    </script>
+</body>
+</html>
